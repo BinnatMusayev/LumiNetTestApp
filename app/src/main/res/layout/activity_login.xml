@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.LoginActivity"
+    android:background="@color/bgColor">
+
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/loginField"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loginLogo"
+        android:layout_marginTop="150dp"
+        android:hint="Useraname"
+        android:layout_centerHorizontal="true"
+        />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/passField"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loginField"
+        android:layout_marginTop="50dp"
+        android:hint="Password"
+        android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        />
+
+    <TextView
+        android:id="@+id/loginErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/passField"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/colorAccent"
+        android:text="wrong credentials"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loginErrorMessage"
+        android:text="Log In"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/bgColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:onClick="login"
+        />
+</RelativeLayout>
