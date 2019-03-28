@@ -68,5 +68,75 @@
             />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/dataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="150dp"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/serviceImage"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:layout_margin="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="top" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="8dp"
+            >
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description: "
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/brandbankCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brand Bank Code: "
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/versionDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version Date Time: "
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/eu1169Compliance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compliance: "
+                android:layout_marginTop="7dp"
+                />
+
+            <TextView
+                android:id="@+id/defaultLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language: "
+                android:layout_marginTop="7dp"
+                />
+            <TextView
+                android:id="@+id/categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories: "
+                android:layout_marginTop="7dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>

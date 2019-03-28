@@ -58,4 +58,20 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.L
     public Context getContext() {
         return this;
     }
+
+    @Override
+    public String getUsername() {
+        return loginField.getText().toString().trim();
+    }
+
+    @Override
+    public String getPassword() {
+        return passField.getText().toString().trim();
+    }
+
+    @Override
+    public void showErrorMessage(String message) {
+        errorMessage.setText(message);
+        errorMessage.setVisibility(View.VISIBLE);
+    }
 }
