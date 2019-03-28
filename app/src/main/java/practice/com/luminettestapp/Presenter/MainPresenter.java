@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,13 +23,10 @@ public class MainPresenter {
     private final String URL_DATA = "http://dev.brandbank.luminet.eu/product/6155887/dataSheet";
     private final String URL_IMAGE = "http://dev.brandbank.luminet.eu/product/6155887/coverImage";
     private MainView mainView;
-    private User user;
     private RequestQueue requestQueue;
 
     public MainPresenter(MainView mainView){
         this.mainView = mainView;
-
-        user = new User();
 
         requestQueue = Volley.newRequestQueue(mainView.getContext());
     }
@@ -59,11 +54,11 @@ public class MainPresenter {
                                         + catObj.getString("level") + ", "
                                         + catObj.getString("code") + ")\n";
                             }
-                            // getting rid of last coma and empty space
-//                            categories  = categories.substring(0, categories.length()-2);
 
                             //set Image
-                            Picasso.get().load(URL_IMAGE).into(mainView.getImageView());
+                            synchronized (new Object()){
+                                Picasso.get().load(URL_IMAGE).into(mainView.getImageView());
+                            }
                             //showing data layout
                             mainView.setJsonDataNames(desc, bbc, vdt, ec, dl, categories );
                             mainView.toggleProgessBar();
@@ -98,10 +93,6 @@ public class MainPresenter {
 
         requestQueue.add(jsonObjectRequest);
 
-    }
-
-    public User getUser(){
-        return this.user;
     }
 
     public interface MainView{
